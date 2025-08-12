@@ -1,4 +1,4 @@
-                                                                    选择
+选择
 <img width="1289" height="1335" alt="image" src="https://github.com/user-attachments/assets/260435f7-0b45-496e-a0d9-62bdbe8c7843" />
 
                                                                     判断
