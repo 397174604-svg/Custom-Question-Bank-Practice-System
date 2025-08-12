@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>考试练习系统</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>考试练习系统</h1>
+        </header>
+
+        <!-- 加载指示器 -->
+        <div id="loadingIndicator" class="loading-indicator">
+            <div class="spinner"></div>
+            <p>正在加载题目数据，请稍候...</p>
+        </div>
+
+        <!-- 错误消息 -->
+        <div id="errorMessage" class="error-message"></div>
+
+        <div class="exam-section">
+            <div class="exam-type">
+                <button id="choiceBtn" class="active">单选题</button>
+                <button id="judgmentBtn">判断题</button>
+                <button id="fillBlankBtn">填空题</button>
+                <button id="definitionBtn">名词解释</button>
+            </div>
+
+            <div class="exam-content">
+                <div class="question-container">
+                    <h2 id="questionNumber">第1题</h2>
+                    <div id="questionContent" class="question-content"></div>
+                </div>
+
+                <div class="answer-container">
+                    <!-- 选择题选项 -->
+                    <div id="choiceOptions" class="options-container">
+                        <div class="option"><input type="radio" name="choice" value="A" id="optionA"><label for="optionA">A</label></div>
+                        <div class="option"><input type="radio" name="choice" value="B" id="optionB"><label for="optionB">B</label></div>
+                        <div class="option"><input type="radio" name="choice" value="C" id="optionC"><label for="optionC">C</label></div>
+                        <div class="option"><input type="radio" name="choice" value="D" id="optionD"><label for="optionD">D</label></div>
+                    </div>
+
+                    <!-- 判断题选项 -->
+                    <div id="judgmentOptions" class="options-container" style="display: none;">
+                        <div class="option"><input type="radio" name="judgment" value="T" id="optionT"><label for="optionT">正确(T)</label></div>
+                        <div class="option"><input type="radio" name="judgment" value="F" id="optionF"><label for="optionF">错误(F)</label></div>
+                    </div>
+
+                    <!-- 填空题和名词解释输入框 -->
+                    <div id="textInputContainer" class="text-input-container" style="display: none;">
+                        <textarea id="textAnswer" placeholder="请输入您的答案"></textarea>
+                    </div>
+
+                    <div class="feedback" id="feedback">
+                        <p id="resultMessage"></p>
+                        <p id="correctAnswer"></p>
+                    </div>
+
+                    <div class="buttons">
+                        <button id="submitBtn">提交答案</button>
+                        <button id="nextBtn">下一题</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="score-section">
+            <h2>得分情况</h2>
+            <div class="score-details">
+                <p>单选题: <span id="choiceScore">0/60</span></p>
+                <p>判断题: <span id="judgmentScore">0/10</span></p>
+                <p>填空题: <span id="fillBlankScore">0/5</span></p>
+                <p>名词解释: <span id="definitionScore">0/0</span></p>
+                <p>总分: <span id="totalScore">0</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

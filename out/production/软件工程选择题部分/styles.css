@@ -1,0 +1,256 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Microsoft YaHei', Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 头部样式 */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    color: #2c3e50;
+}
+
+/* 考试部分样式 */
+.exam-section {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.exam-type {
+    display: flex;
+    border-bottom: 1px solid #eee;
+}
+
+.exam-type button {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.exam-type button:hover {
+    background-color: #e9ecef;
+}
+
+.exam-type button.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.exam-content {
+    padding: 20px;
+}
+
+.question-container {
+    margin-bottom: 20px;
+}
+
+.question-container h2 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.question-content {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 4px solid #4CAF50;
+    margin-bottom: 20px;
+    white-space: pre-line;
+}
+
+/* 答案选项样式 */
+.options-container {
+    margin-bottom: 20px;
+}
+
+.option {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.option:hover {
+    background-color: #e9ecef;
+}
+
+.option input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* 文本输入框样式 */
+.text-input-container {
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: vertical;
+    font-size: 16px;
+}
+
+/* 反馈样式 */
+.feedback {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    display: none;
+}
+
+.feedback.correct {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    display: block;
+}
+
+.feedback.incorrect {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    display: block;
+}
+
+/* 按钮样式 */
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#submitBtn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#submitBtn:hover {
+    background-color: #45a049;
+}
+
+#nextBtn {
+    background-color: #2196F3;
+    color: white;
+}
+
+#nextBtn:hover {
+    background-color: #0b7dda;
+}
+
+/* 得分部分样式 */
+.score-section {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.score-section h2 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.score-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.score-details p {
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* 加载指示器样式 */
+.loading-indicator {
+    display: none;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 15px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #4CAF50;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 错误消息样式 */
+.error-message {
+    display: none;
+    padding: 15px;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .exam-type {
+        flex-direction: column;
+    }
+
+    .score-details {
+        grid-template-columns: 1fr;
+    }
+}
